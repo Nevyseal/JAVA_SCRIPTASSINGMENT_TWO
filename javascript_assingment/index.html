@@ -1,0 +1,29 @@
+<html>
+<head> <title>NOTIFICATION POPOP-UP</title> 
+</head>
+<body>
+    <body style="margin: 0px; height: 100%; background-color: rgb(14, 14, 14);"><img style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);" src="https://i.pinimg.com/originals/9a/25/31/9a2531683e9ee26021c4f1e2084014d1.gif" width="400" height="300"></body>
+    <script>
+        // Get the notification element
+        var notification = document.getElementById("notification");
+
+        // Get the close button element
+        var close = document.getElementById("notification-close");
+
+        // Add a click event listener to the close button
+        close.addEventListener("click", function() {
+            // Play a sound when the notification is closed
+            var audio = new Audio("notifications-sound-127856.mp3");
+            audio.play();
+
+            // Add the slideout class to the notification element
+            notification.classList.add("slideout");
+
+            // Remove the notification element after the animation ends
+            notification.addEventListener("animationend", function() {
+                notification.remove();
+            });
+        });
+    </script>
+</body>
+</html>
